@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gov.hebei.ylbzj.dao.SysLogininforMapper">
+
+
+
+    <insert id="insertLogininfor" parameterType="cn.gov.hebei.ylbzj.domain.SysLogininfor">
+		insert into sys_logininfor (login_name, status, ipaddr, login_location, browser, os, msg, login_time)
+		values (#{loginName}, #{status}, #{ipaddr}, #{loginLocation}, #{browser}, #{os}, #{msg}, sysdate())
+	</insert>
+
+
+    <select id="selectLogininforCount" resultType="int" >
+        select count(1) from sys_logininfor
+    </select>
+
+
+
+</mapper>
